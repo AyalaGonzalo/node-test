@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/css/login_shop-style.css">
+	<title>Login</title>
+</head>
+
+<body>
+	
+	<%- include('../partials/header.ejs') %>
+	
+	<main>
+		<section class="main__login">
+		
+			<% if( typeof error != 'undefined'){ %>
+				<div class="error">
+			
+					<% error.forEach(err =>{ %>
+				
+						<p><%= err.msg %></p>
+					
+					<% }) %>
+					
+				</div>
+			<% } %>
+		
+		
+			<h1>INGRESAR A MI CUENTA</h1>
+			<form class="form__login" method="post" action="/auth/login">
+				<div class="form__div">
+					<label class="form__label" for="user_email">Email:</label>
+					<input id="user_email" type="email" name="user_email" placeholder="jonhdoe@correo.com" />
+				</div>
+				<div class="form__div">
+					<label class="form__label" for="user_password">Contraseña:</label>
+					<input id="user_password" type="password" name="user_password" />
+				</div>
+
+				<div class="form__div login">
+					<button class="form__button" type="submit">Ingresar</button>
+					<input id="recordarme" name="recordarme" type="checkbox" />
+					<label class="form__label-checkbox" for="recordarme">Recordarme</label>
+
+				</div>
+			</form>
+			<a href="#">¿Olvido su contraseña?</a>
+		</section>
+
+	</main>
+	<%- include('../partials/footer.ejs') %>
+</body>
+
+</html>
