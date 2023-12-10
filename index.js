@@ -18,7 +18,7 @@ app.use(express.json())
 
 
 app.set('view engine', 'ejs')
-app.set('views', './src/views')
+app.set('views', path.join(__dirname, "/src/views"))
 
 app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname,'/public')))
