@@ -84,7 +84,7 @@ const editPutController = async (req, res) => {
 					sharp(file.buffer)
 						.resize(600)
 						.toFile(
-							path.resolve(__dirname, `../../.././public/assets/multimedia/uploads/${folder}/${images[count]}`)
+							path.resolve(__dirname, `../../../public/assets/multimedia/uploads/${folder}/${images[count]}`)
 						)
 
 					count++
