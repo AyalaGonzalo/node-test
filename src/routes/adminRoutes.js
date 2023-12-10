@@ -2,18 +2,18 @@
 const express = require('express')
 const router = express.Router()
 
-const editGet = require('.././controller/admin/editGetController.js')
-const editPut = require('.././controller/admin/editPutController.js')
-const getAdmin = require('.././controller/admin/getAdminController.js')
-const getCreate = require('.././controller/admin/getCreateController.js')
-const postCreate = require('.././controller/admin/postCreateController.js')
-const deleteItem = require('.././controller/admin/deleteItemController.js')
+const editGet = require('../controller/admin/editGetController.js')
+const editPut = require('../controller/admin/editPutController.js')
+const getAdmin = require('../controller/admin/getAdminController.js')
+const getCreate = require('../controller/admin/getCreateController.js')
+const postCreate = require('../controller/admin/postCreateController.js')
+const deleteItem = require('../controller/admin/deleteItemController.js')
 
 const multer = require('multer')
 const upload = multer({ storage: multer.memoryStorage() })
  
 const { body } = require('express-validator')
-const isLogin = require('.././middleware/isLogin.js') 
+const isLogin = require('../middleware/isLogin.js') 
  
  const validations = [
  

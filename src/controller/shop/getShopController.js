@@ -1,6 +1,6 @@
 
-const Product = require('../.././model/Product.js')
-const License = require('../.././model/License.js') 
+const Product = require('../../model/Product.js')
+const License = require('../../model/License.js') 
 
 const getShop = async (req, res) => {
 	

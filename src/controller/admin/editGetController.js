@@ -1,8 +1,8 @@
 
 /* const sequelize = require('.././config/connection.js')*/
-const Category = require('../.././model/Category.js')
-const License = require('../.././model/License')
-const Product = require('../.././model/Product.js')
+const Category = require('../../model/Category.js')
+const License = require('../../model/License')
+const Product = require('../../model/Product.js')
 
 const editGet = async (req, res) =>{
 

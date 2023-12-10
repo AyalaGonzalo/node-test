@@ -2,9 +2,9 @@
 const path = require('path')
 const sharp = require('sharp')
 
-const Category = require('../.././model/Category.js')
-const License = require('../.././model/License')
-const Product = require('../.././model/Product.js')
+const Category = require('../../model/Category.js')
+const License = require('../../model/License')
+const Product = require('../../model/Product.js')
 
 const { validationResult } = require('express-validator')
 

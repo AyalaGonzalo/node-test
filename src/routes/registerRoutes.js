@@ -5,8 +5,8 @@ const { body } = require('express-validator')
 
 const router = express.Router()
 
-const getRegister = require('.././controller/auth/getRegister.js')
-const postRegister = require('.././controller/auth/postRegister.js')
+const getRegister = require('../controller/auth/getRegister.js')
+const postRegister = require('../controller/auth/postRegister.js')
 
 const User = require('.././model/User.js')
 

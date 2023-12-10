@@ -4,8 +4,8 @@ const express = require('express')
 const router = express.Router()
 const { body } = require('express-validator')
 
-const getLogin = require('.././controller/auth/getLogin.js')
-const postLogin = require('.././controller/auth/postLogin.js')
+const getLogin = require('../controller/auth/getLogin.js')
+const postLogin = require('../controller/auth/postLogin.js')
 
 
 const loginValidations = [

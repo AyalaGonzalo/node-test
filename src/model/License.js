@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize')
-const sequelize = require('.././config/connection.js')
+const sequelize = require('../config/connection.js')
 
 
 const License = sequelize.define('license', {
