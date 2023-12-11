@@ -1,7 +1,7 @@
 
 const getAdmin = (req, res) => {
 	
-	res.send('admin')
+	res.render('admin/admin')
 	
 }
 

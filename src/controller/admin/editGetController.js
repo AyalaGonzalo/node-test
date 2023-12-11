@@ -37,8 +37,9 @@ const editGet = async (req, res) =>{
 			
 			const category = await Category.findAll({raw: true})
 			const license = await License.findAll({raw: true})
+			const isLogin = req.session.userId
 			
-			res.render('admin/edit', {product, category, license})
+			res.render('admin/edit', {product, category, license, isLogin})
 			
 		}else{
 			

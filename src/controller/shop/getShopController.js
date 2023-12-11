@@ -13,7 +13,9 @@ const getShop = async (req, res) => {
 			
 		})
 		
-		res.render('shop/shop', {product, session : req.session.userId})
+		const isLogin = req.session.userId
+		
+		res.render('shop/shop', {product, isLogin})
 		
 	}catch(err){
 	

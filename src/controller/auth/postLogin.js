@@ -4,6 +4,7 @@ const User = require('../../model/User.js')
 
 const postLogin = async (req, res) => {
 	
+	const isLogin = req.session.userId
 	
 	try{
 		
@@ -20,9 +21,11 @@ const postLogin = async (req, res) => {
 		
 		if(!user){
 			
+			
+			
 			const error = [{msg: 'Email o contraseña incorrectos'}]
 			
-			return res.status(404).render('auth/login', { error })
+			return res.status(404).render('auth/login', { error, isLogin })
 			
 		}
 		
@@ -32,7 +35,7 @@ const postLogin = async (req, res) => {
 			
 			const error = [{msg: 'Email o contraseña incorrectos'}]
 			
-			return res.render('auth/login', { error })
+			return res.status(404).render('auth/login', { error, isLogin })
 			
 		}
 	
@@ -42,7 +45,7 @@ const postLogin = async (req, res) => {
 		
 		console.log(req.body, user)
 	
-		res.redirect('/shop')
+		res.redirect('/admin')
 		
 		
 	}catch(err){

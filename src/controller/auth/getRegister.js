@@ -1,7 +1,11 @@
 
 const getRegister = (req, res) => {
 	
-	res.render('auth/register')
+	const isLogin = req.session.userId
+	
+	res.render('auth/register', {isLogin})
+	
+	
 	
 }
 

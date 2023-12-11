@@ -13,12 +13,16 @@
 			<ul class="navbar__menu">
 				<li><a href="/">INICIO</a></li>
 				
+				
+				<% if(isLogin){ %>
+				
 					<li><a href="/auth/logout">SALIR</a></li>
 				
+				<% } else { %>
 				
 					<li><a href="/auth/login">LOGIN</a></li>
 					
-				
+				<% } %>
 				
 				<li><a href="/shop">SHOP</a></li>
 				<li>

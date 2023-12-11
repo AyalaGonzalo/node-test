@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funko shop</title>
+    <link rel="stylesheet" href="/css/login_shop-style.css">
+</head>
+
+<body>
+    
+	<%- include('./partials/header.ejs', isLogin) %>
+
+	<section class="banner">
+        <div class='banner__text'>
+            <h1>Nuevos Ingresos</h1>
+            <p class="banner__info">Descubri el proximo Funko Pop de tu coleccion</p>
+			
+            <a class="banner__shop-link" href="/shop"><button class="banner__button">SHOP</button></a>
+        </div>
+    </section>
+
+    <main class="index-container container">
+     
+	 <% licenses.forEach(license => { %>
+       
+	   <%- include('./partials/sectionLicense.ejs', {license}) %>
+
+     <% }); %>   
+
+        <!-- ultimos lanzamientos -->
+        <section>
+            <h2 class="last-releases-h2">ULTIMOS LANZAMIENTOS</h2>
+			<div class="releases__container">
+				<% products.forEach(products => { %>
+					<%- include('./partials/itemPartial.ejs', {products}) %>
+				<% }); %>
+			</div>			 
+        </section>
+
+    </main>
+
+		<%- include('./partials/footer.ejs') %>
+    
+</body>
+</html>

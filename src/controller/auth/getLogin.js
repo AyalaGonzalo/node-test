@@ -1,7 +1,9 @@
 
 const getLogin = (req, res) => {
 	
-	res.render('auth/login')
+	const isLogin = req.session.userId
+	
+	res.render('auth/login', {isLogin})
 	
 }
 
