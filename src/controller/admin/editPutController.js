@@ -12,7 +12,7 @@ const editPutController = async (req, res) => {
 
 	const category = await Category.findAll()
 	const license = await License.findAll()
-
+	const isLogin = req.session.userId
 
 	const error = validationResult(req)
 
@@ -20,12 +20,15 @@ const editPutController = async (req, res) => {
 
 		try {
 
+			const isLogin = req.session.userId
+
 			return res.render('admin/edit', {
 
 				error: error.array(),
 				product: { ...req.params, ...req.body },
 				category: category,
-				license: license
+				license: license,
+				isLogin
 
 			})
 
@@ -129,8 +132,9 @@ const editPutController = async (req, res) => {
 				error,
 				product: { ...req.params, ...req.body, ...product },
 				category: category,
-				license: license
-
+				license: license,
+				isLogin
+		
 			})
 
 		}
