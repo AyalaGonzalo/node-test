@@ -13,6 +13,24 @@ const editPutController = async (req, res) => {
 	const category = await Category.findAll()
 	const license = await License.findAll()
 	const isLogin = req.session.userId
+	
+	const product = await Product.findOne({
+
+				raw: true,
+				attributes: ['product_front_view', 'product_box'],
+				where: {
+					id: req.params.id
+				},
+				include: [
+
+					{
+						model: License,
+						required: true
+					}
+
+				]
+			})
+
 
 	const error = validationResult(req)
 
@@ -25,7 +43,7 @@ const editPutController = async (req, res) => {
 			return res.render('admin/edit', {
 
 				error: error.array(),
-				product: { ...req.params, ...req.body },
+				product: { ...req.params, ...req.body, ...product },
 				category: category,
 				license: license,
 				isLogin
@@ -108,23 +126,7 @@ const editPutController = async (req, res) => {
 
 		} else {
 
-			const product = await Product.findOne({
-
-				raw: true,
-				attributes: ['product_front_view', 'product_box'],
-				where: {
-					id: req.params.id
-				},
-				include: [
-
-					{
-						model: License,
-						required: true
-					}
-
-				]
-			})
-
+			
 			const error = [{ msg: 'Las imágenes deben ser dos' }]
 
 			return res.render('admin/edit', {
