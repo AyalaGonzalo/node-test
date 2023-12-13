@@ -4,91 +4,97 @@
 		<meta charset="UTF-8" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../css/cart-style.css" />
+		 <link rel="stylesheet" href="/css/login_shop-style.css">
 		<title>Carrito</title>
 	</head>
 	<body>
-		
-		<main>
-			<section>
-				<div class="cart_title">
-					<h2>CARRITO DE COMPRAS</h2>
-				</div>
-				<div class="cart_products_title_container">
-					<div class="cart_products_title_container_item1">
+		<%- include('../partials/header.ejs', isLogin) %>
+		<main class="container">
+			
+			<div class="cart_title">
+				<h1 class="cart-h1">CARRITO DE COMPRAS</h1>
+			</div>
+			
+			
+				
+				<div class="cart_products">
+					<div class="cart_products_info">
 						<p>DETALLE DE PRODUCTO</p>
 					</div>
-					<div class="cart_products_title_container_item2">
+					<div class="cart_products_info">
 						<p>CANTIDAD</p>
 					</div>
-					<div class="cart_products_title_container_item3">
+					<div class="cart_products_info">
 						<p>TOTAL</p>
 					</div>
 				</div>
 
-				<div
-					class="cart_products_detail"
-					style="
-						display: grid;
-						grid-template-columns: 1.2fr 1fr 1fr 1fr;
-						border: solid 1px black;
-						align-items: center;
-					"
-				>
-					<picture>
-						<img
-							src="../assets/multimedia/star-wars/baby-yoda-1.webp"
-							alt=""
-							width="300vw"
-						/>
-					</picture>
+				<div class="product_container">
+					
+					
 
-					<div>
-						<h3>BABY YODA BLUEBALL</h3>
-						<p>star wars</p>
-						<p>precio: $ 1799,99</p>
+					<div class="product_info">
+						<div>
+							<img class="img_info"
+								src="/assets/multimedia/uploads/star wars/baby-yoda-1.webp"
+								alt="baby yoda"
+							/>
+						</div>
+						<div class="product_text">
+							<h3 class="product-name-h3">BABY YODA BLUEBALL</h3>
+							<p>star wars</p>
+							<p>precio: $ 1799,99</p>
+						</div>
 					</div>
-					<div>
-						<input type="number" name="cantidad" id="" value="0" />
+					<div class="product__adjustment">
+						<input class="product__input-number" name="quantity" value="0" />
+						<div class="product__add-dec">
+							<button class=" button increment">+</button>
+							<button class=" button decrement">-</button>
+						</div>
 					</div>
-					<div>
+					<div class="product_price">
 						<p>$ 3599,98</p>
 					</div>
-				</div>
-				<!-- <div> -->
-				<!-- <div style="text-align: right;margin-right: 25em;">
-                        <h2>Resumen</h2>
-                    </div> -->
-
-				<div
-					style="
-						display: grid;
-						grid-template-columns: 60% 30% 10%;
-						grid-template-rows: 10% 90%;
-					"
-				>
-					<div style="grid-column-start: 2">
-						<h3 style="margin: 0">Resumen</h3>
+					<div class="icon-container">
+						<img class="delete_icon" src="/assets/multimedia/icons/delete_icon.svg" />
 					</div>
-					<div class="resume_payment">
-						<div class="resume_payment_table">
-							<p>Cantidad de Elementos</p>
+				</div>
+		
+			<section class="resume_container">
+				<div class= "cart_payment">
+					<div class="payment_h3">
+						<h3>RESUMEN</h3>
+					</div>
+					<div class="payment_resume">
+						<div class="payment_table">
+							<p>CANTIDAD DE ELEMENTOS</p>
+							<p class="number_table">3</p>
 						</div>
-						<div class="resume_payment_table"><p>3</p></div>
-						<div class="resume_payment_table"><p>Subtotal</p></div>
-						<div class="resume_payment_table"><p>$ 3599,98</p></div>
-						<div class="resume_payment_table"><p>Envio</p></div>
-						<div class="resume_payment_table"><p>$ 0,00</p></div>
-						<div class="resume_payment_table"><h3>Total</h3></div>
-						<div class="resume_payment_table"><p>$ 3599,98</p></div>
+						
+						<div class="payment_table">
+							<p>SUBTOTAL</p>
+							<p class="number_table">$ 3599,98</p>
+						</div>
+						
+						<div class="payment_table">
+							<p>ENVIO</p> 
+							<p class="number_table">$ 0,00</p>
+						</div>
+						<div class="divisor payment_table"></div>
+						<div class="payment_table">
+							<h3>TOTAL</h3>
+							<p class="number_table last">$ 3599,98</p>
+						</div>
+						
 					</div>
 					<!-- </div> -->
-					<div class="button_payment">
-						<input type="button" value="Ir a Pagar" />
+					<div class="payment_button">
+						<button class="paid">IR A PAGAR</button>
 					</div>
 				</div>
 			</section>
 		</main>
-		
+		<%- include('../partials/footer.ejs') %>
 	</body>
 </html>

@@ -1,7 +1,9 @@
 
 const getCart = (req, res) => {
 	
-	res.send('cart')
+	const isLogin = req.session.userId
+	
+	res.render('shop/cart', {isLogin})
 	
 }
 
