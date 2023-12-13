@@ -62,8 +62,10 @@ const editPutController = async (req, res) => {
 					}
 
 				})
+				
+					res.redirect('/admin')
 
-			if (product) {
+			/* if (product) {
 
 				let count = 0
 				let folder = ''
@@ -89,16 +91,16 @@ const editPutController = async (req, res) => {
 
 					count++
 
-				})
+				}) */
 
-				res.redirect('/admin')
-
+			
+/* 
 			} else {
 
 				res.status(500).send('Error al actualizar el producto')
 
 			}
-
+ */
 
 
 		} else {

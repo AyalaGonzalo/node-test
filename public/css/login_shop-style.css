@@ -201,6 +201,7 @@ footer {
 
 .last-releases-h2{
 	
+	margin: 2em;
 	font-size: 1.5em;
 	text-align: center;
 	
@@ -297,6 +298,134 @@ footer {
 
 /*---------------------INDEX------------------*/
 
+
+
+/*---------------------ITEM------------------*/
+
+.item__info-container{
+	
+	margin-left: .6em;
+	
+}
+
+.item__h2{
+	
+	margin: .5em 0;
+}
+.item__description{
+		
+	margin-bottom: .8em;
+		
+}
+	
+.item__price{
+		
+	color: #333333;
+	font-weight: 500;
+	margin-bottom: 1em;
+		
+}
+
+.item__form{
+		
+	margin-bottom: 1em;
+		
+}
+
+.item__adjustment{
+		
+	display: flex;
+	align-items: center;
+		
+}
+
+	.item__adjustment .form__input-number{
+		
+		width: 3em;
+		height: 1.25em;
+		border: 1px solid grey;
+		border-radius: 0;
+		text-align: center;
+		color: grey;
+		font-size: 2em;
+		margin-left: 0;
+		
+	}
+	
+	
+	.button{
+		
+		width: 1.3em;
+		background-color: rgb(60 60 60);
+		margin: 2px;
+		border: none;
+		color: white;
+		
+	}
+		
+	.item__add-dec{
+		
+		display: flex;
+		flex-direction: column;
+		margin-left: .3em;
+		margin-right: 1.5em;
+		
+	}
+	
+	
+	.item__adjustment .submit-edit{
+		
+		width: 150px;
+		height: 45px;
+		background-color: #FF3333;
+		color: white;
+		border: none;
+		
+	}
+
+@media(min-width: 1024px) {
+	
+	.item__container{
+	
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	
+	}
+
+	
+	.item__h2{
+	
+		font-size: 2em;
+		margin: .5em 0;
+	}
+	
+	
+	.item__price{
+		
+		color: #333333;
+		font-weight: 500;
+		font-size: 1.5em;
+		margin-bottom: 1em;
+		
+	}
+	
+
+
+	.item__adjustment .submit-edit{
+		
+		width: 150px;
+		height: 45px;
+		background-color: #FF3333;
+		color: white;
+		border: none;
+		
+	}
+
+	
+	
+}
+/*---------------------ITEM------------------*/
 
 main {
 

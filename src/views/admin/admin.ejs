@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/create.css">
+    <title>dashboard</title>
+</head>
+<body>
+    <header> <!-- encabezado -->
+        <nav class="navbar container"> <!-- barra de navegacion -->
+            <div class="logo-header">
+                <a href=".././index.html"> <!-- logo -->
+                    <img src=".././assets/img/branding/logo_light_horizontal.svg" alt="logo de funkoshop">
+                </a>
+            </div>
+
+                <ul class="navbar-menu">
+                    <li class="navbar-item"> <a class="navbar-link" href="/shop">Ver Tienda</a> </li>
+                    <li class="navbar-item"> <a class="navbar-link" href="/admin">Admin</a> </li>
+                    <li class="navbar-item"> <a class="navbar-link" href="/auth/logout">Salir</a> </li>
+                </ul>
+        </nav>
+    </header>
+<main>
+<section class="container with-icon"> <!-- <Search> -->
+    <form action="" method="get" enctype="application/x-www-form-urlencoded">
+      <!-- <input type="search" value="Buscar"> -->
+      <button type="submit"><img src="/assets/multimedia/icons/search_icon.svg" alt="lupa"></button>
+      <div>
+        <label for="search"> </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="código, nombre o categoria"
+          />
+      </div>
+    </form>
+</section>
+
+<section class="table container"><!-- <Items list> -->
+  <nav class="navbar container">
+    <h1>LISTADO DE PRODUCTOS</h1>
+    <ul class="navbar-menu">
+      <li class="add-text"> AGREGAR </li>
+      <li class="navbar-item"> <a href="/admin/create"><div class="add"><img class="add" src="/assets/icons/+.png"></div> </a></li>
+    </ul>
+  </nav>
+
+    <table>
+      <thead class="thead">
+        <tr>
+          <th>ID</th>
+          <th>Código</th>
+          <th>Nombre del Producto</th>
+          <th>Licencia</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% product.forEach(product =>{ %>
+		
+          <tr>
+            <td><%= product.id %></td>
+            <td><%= product.SKU %></td>
+            <td><%= product['name'] %></td>
+            <td><%= product['license.license_name'] %></td>
+            <th><a href="/admin/edit/<%= product.id %>"><img src="/assets/icons/edit_pencil.svg" alt="edit_pencil"></a></th>
+            <th><img src="/assets/icons/delete_trash.svg" alt="delete_trash"></th>
+          </tr>
+        <% }) %>
+
+      </tbody>
+    </table>
+
+</section>
+</main>
+<footer class="footer">
+    <nav class="navbar container">
+            <ul class="navbar-item">
+
+                <li class="navbar-item"> 
+                    <a class="navbar-link" href="../index.html">Shop</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a class="navbar-link" href="./register.html">Registrarse</a>
+                </li>
+
+                <li class="navbar-item"> 
+                    <a class="navbar-link" href="./login.html">Ingresar</a> 
+                </li>
+
+                <li class="navbar-item"> 
+                    <a class="navbar-link" href="./contacto.html">Contacto</a> 
+                </li>
+
+            </ul>
+
+            <picture>
+                <!-- <a href="../index.html"> logo -->
+                    <img src="../assets/img/branding/isotype.svg" alt="logo de funkoshop">
+                <!-- </a> -->
+            </picture>
+        </nav>
+        <p class="copyright">Todos los derechos reservados - comisión 23573 grupo 9</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</body>
+</html>

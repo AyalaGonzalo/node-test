@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Item</title>
+		 <link rel="stylesheet" href="/css/login_shop-style.css">
+	</head>
+	<body>
+		<%- include('../partials/header.ejs', isLogin) %>
+		<main class="container">
+			<section class="item__container">
+			
+				<div>
+					<img src="/assets/multimedia/uploads/<%= product["license.license_name"] %>/<%= product.product_front_view %>" alt="<%= product.name %>" />
+				</div>
+				<div class="item__info-container">
+					<p class="item__info-title"><%=product["license.license_name"].toUpperCase() %></p></p>
+					<h2 class="item__h2"><%= product.name %></h2>
+					<p class="item__description">
+						<%= product.description %>
+					</p>
+					<p class="item__price">$ <%= product.price %></p>
+
+					<form class='item__form' action="/shop/cart" method="get">
+					
+						<div class="item__adjustment">
+							<input class="form__input-number" name="quantity" value="0" />
+							<div class="item__add-dec">
+								<button class=" button increment">+</button>
+								<button class=" button decrement">-</button>
+							</div>
+							<button class="submit-edit" type="submit">Agregar al carrito</button>
+						</div>	
+						
+					</form>
+
+					<a href="#">
+						Ver métodos de pago - <%= product.dues %> CUOTAS SIN INTERÉS
+					</a>
+				</div>
+				
+			</section>
+
+		<section>
+            <h2 class="last-releases-h2">PRODUCTOS RELACIONADOS</h2>
+			<div class="releases__container">
+				<% products.forEach(products => { %>
+					<%- include('../partials/itemPartial.ejs', {products}) %>
+				<% }); %>
+			</div>			 
+        </section>
+		</main>
+		<%- include('../partials/footer.ejs') %>
+	</body>
+</html>
