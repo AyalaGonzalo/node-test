@@ -90,6 +90,12 @@ img {
     width: 100%;
 }
 
+.error {
+    background-color: #FF3333;
+    color: #FFFFFF;
+	padding: 15px;
+}
+
 .add{
 	
 	

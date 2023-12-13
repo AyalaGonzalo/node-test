@@ -34,7 +34,7 @@ router.get('/admin', isLogin, getAdmin)
 
 router.get('/admin/create', isLogin, getCreate)
 
-router.post('/admin/create', isLogin, postCreate)
+router.post('/admin/create', isLogin, upload.array('images'), validations, postCreate)
 
 router.get('/admin/edit/:id', isLogin, editGet)
 

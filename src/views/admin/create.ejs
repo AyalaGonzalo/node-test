@@ -19,61 +19,78 @@
             </div>
 
                 <ul class="navbar-menu">
-                    <li class="navbar-item"> <a class="navbar-link" href="/shop">Ver Tienda</a> </li>
-                    <li class="navbar-item"> <a class="navbar-link" href="/admin">Admin</a> </li>
-                    <li class="navbar-item"> <a class="navbar-link" href="/auth/logout">Salir</a> </li>
+                    <li class="navbar-item"> <a class="navbar-link" href="../index.html">Ver Tienda</a> </li>
+                    <li class="navbar-item"> <a class="navbar-link" href="./listadoProductos.html">Admin</a> </li>
+                    <li class="navbar-item"> <a class="navbar-link" href="./login.html">Salir</a> </li>
                 </ul>
         </nav>
     </header>
 
     <section class="container">
         <h1>CREAR NUEVO ITEM</h1>
-        <form method="post" action="" enctype="multipart/form-data">
+        <% if( typeof error != 'undefined'){ %>
+            <div class="error">
+        
+                <% error.forEach(err =>{ %>
+            
+                    <p><%= err.msg %></p>
+                
+                <% }) %>
+                
+            </div>
+        <% } %>
+        <form method="post" action="/admin/create" enctype="multipart/form-data">
 
             <section class="paddings">
                 <label for="categorias" class="light-label paddings-titles">Categoría:</label>
-                <select name="categorias-select" class="select">
+                <select name="category_id" id="category_id" class="select">
                     <option class="categorias-option">Seleccionar</option>
+                    <% category.forEach(category=>{ %>
+                        <option value= "<%= category.category_id %>"> <%= category.category_name %> </option>
+                <% }) %>
                     <!-- Agrega más opciones de categorías aquí -->
                 </select>
     
-                <label for="licencia" class="light-label paddings-titles">Licencia:</label>
-                <select class="select" name="licencia-select">
+                <label for="license" class="light-label paddings-titles">Licencia:</label>
+                <select class="select" name="license_id" id="license_id">
                     <option>Seleccionar</option>
+                    <% license.forEach(license=>{ %>
+                        <option value= "<%= license.license_id %>"> <%= license.license_name %> </option>
+                <% }) %>
                     <!-- Agrega más opciones de licencias aquí -->
                 </select>
             </section>
 
 
             <section class="paddings">
-                <label for="name-product" class="label-items">Nombre del producto:</label>
-                <input type="text" id="name-product" placeholder="Kakashi Hatake Shippuden Saga" class="name-product">
+                <label for="name" class="label-items">Nombre del producto:</label>
+                <input type="text" id="name" name="name" value="<%= typeof product != 'undefined' ? product.name: '' %>" class="name-product">
             </section>
 
             <section class="paddings">
-                <textarea id="descripcion" placeholder="Descripción del producto" class="descripcion">
-                    
+                <textarea id="description" name="description" value="<%= typeof product != 'undefined' ? product.description: '' %>" class="descripcion">
+                    <%= typeof product != 'undefined' ? product.description: '' %>
                 </textarea>
             </section>
 
             <section class="flex-direction paddings">
                 <label for="SKU" class="label-items paddings-titles">SKU:</label>
-                <input type="text" id="SKU" name="SKU" placeholder="SSK111AB001" class="input-line">
+                <input type="text" id="SKU" name="SKU" value="<%= typeof product != 'undefined' ? product.SKU: '' %>" class="input-line">
     
                 <label for="price" class="label-items paddings-titles">Precio:</label>
-                <input type="text" id="price" name="price" placeholder="$0.00" class="input-line">
+                <input type="text" id="price" name="price" value="<%= typeof product != 'undefined' ? product.price: '' %>" class="input-line">
     
                 <label for="stock" class="label-items paddings-titles">Stock:</label>
-                <input type="text" id="stock" name="stock" placeholder="0" class="text-center input-line">
+                <input type="text" id="stock" name="stock" value="<%= typeof product != 'undefined' ? product.stock: '' %>" class="text-center input-line">
             </section>
 
             <section class="flex-direction paddings">
 
                 <label for="discount" class="label-items paddings-titles">Descuento:</label>
-                <input type="text" id="discount" name="discount" placeholder="0%" class=" text-center input-line">
+                <input type="text" id="discount" name="discount" value="<%= typeof product != 'undefined' ? product.discount: '' %>" class=" text-center input-line">
     
                 <label for="dues" class="text-center  label-items paddings-titles">Cuotas:</label>
-                <select name="dues" id="dues" class="select ">
+                <select name="dues" id="dues"  class="select ">
                     <option value = "3">3 cuotas sin interes</option>
                     <option value = "6">6 cuotas sin interes</option>
                     <option value = "9">9 cuotas sin interes</option>
@@ -88,8 +105,8 @@
             </section>
 
             <section class="buttons">
-                <button type="submit" class="button">Agregar Producto</button>
-                <button type="reset" class="button">Limpiar</button>
+                <button class="button">Agregar Producto</button>
+                <button class="button">Limpiar</button>
             </section>
         </form>
 
