@@ -12,7 +12,7 @@ try {
 			}
 		],
 	})
-	console.log (product)
+	
 	res.render ('admin/admin', {product})
 }catch(err){
 		

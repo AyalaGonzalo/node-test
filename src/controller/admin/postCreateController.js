@@ -22,7 +22,7 @@ const postCreate = async (req, res) => {
 				category})			
 		}
 		if(req.files.length == 2 ) {
-			console.log (req.files)
+			
 			const [product_front_view, product_box] = req.files.map(file => file.originalname)
 			const images = [product_front_view, product_box]
 

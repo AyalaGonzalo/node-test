@@ -11,15 +11,17 @@
 			</div>
 
 			<ul class="navbar__menu">
-				<li><a href="/">INICIO</a></li>
 				
+				<li><a href="/">INICIO</a></li>
 				
 				<% if(isLogin){ %>
 				
+					<li><a href="/admin">ADMIN</a></li>
 					<li><a href="/auth/logout">SALIR</a></li>
 				
 				<% } else { %>
 				
+					
 					<li><a href="/auth/login">LOGIN</a></li>
 					
 				<% } %>

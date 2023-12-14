@@ -96,6 +96,25 @@ img {
 	padding: 15px;
 }
 
+.search__container{
+	
+	display: flex;
+	align-items: center;
+}
+
+.search__admin-btn img{
+	
+	width: 20px;
+	
+}
+
+.search__admin-ipt{
+	
+	height: 28px;
+	
+}
+
+
 .add{
 	
 	
